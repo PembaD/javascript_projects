@@ -9,7 +9,7 @@ Nodes - refers to any type of object in the DOM heirarchy
       - .nodeType property on any node object gives its type 
             -index of type of node in MDN table
 */
-console.log("Document node type",document.nodeType)
+console.log("Document node type: ",document.nodeType)
 console.dir(document); //all the properties of document object
 console.log(document.domain);
 console.log(document.URL);
@@ -18,11 +18,11 @@ document.title = 123;
 console.log(document.doctype);
 console.log(document.head);
 console.log(document.body);
-console.log(document.all); //list of all the elements
+// console.log(document.all); //list of all the elements
 // document.all[10].textContent = "hello";
-console.log(document.forms);
-console.log(document.links);
-console.log(document.images);
+// console.log(document.forms);
+// console.log(document.links);
+// console.log(document.images);
 
 /* SELECTORS:
     1. by ID
@@ -34,7 +34,7 @@ console.log(document.images);
 console.log(document.getElementById("header-title"));
 let headerTitle = document.getElementById("header-title");
 let header = document.getElementById("main-header");
-console.log(headerTitle);
+console.log("Header Title: ",headerTitle.textContent);
 headerTitle.textContent = "Fancy List Itemss";
 console.log(headerTitle.innerHTML);
 headerTitle.innerHTML = '<h3>Fancy List Items</h3>'
@@ -74,7 +74,7 @@ let header2 = document.querySelector("#main-header");
 header2.style.borderBottom = "solid 10px #ccc";
 
 let input = document.querySelector("input");
-input.value = "HELLO WORLD"
+input.value = "HELLO WORLDY"
 
 let submit = document.querySelector("input[type='submit']")
 submit.value = "SEND"
@@ -110,7 +110,7 @@ Traversing the DOM:
     - parent nodes, child nodes and sibling
 */
 let item_list = document.querySelector("#items") //the # refers to id
-console.log(item_list.parentNode) //parentNode property
+console.log("Parent Node:",item_list.parentNode) //parentNode property
 item_list.parentNode.style.backgroundColor = "#f4f4f4";
 console.log(item_list.parentElement);
 
@@ -133,8 +133,10 @@ newDiv.className = "hello"; //add class
 newDiv.id = "hello1"; // add id
 newDiv.setAttribute("title","Hello Div"); //add attribute
 let newDivText = document.createTextNode("HELLO MY FRIEND") //create text node
+newDivText.fontWeight = "bold";
 newDiv.appendChild(newDivText) // put text node inside div
-console.log(newDiv)
+newDiv.style.fontSize = "10px";
+console.log("New Div:",newDiv)
 
 //add element to the DOM
 let container = document.querySelector("header .container");
@@ -152,11 +154,54 @@ let button  = document.getElementById("button");
 button.addEventListener("click",buttonClick);
 
 //create the event handler
+let itemNumber = 5;
 function buttonClick(e){
     let newItem = document.createElement("li");
-    let newText = document.createTextNode("New Item");
+    let newText = document.createTextNode("New Item " + itemNumber);
+    itemNumber += 1;
     newItem.setAttribute("class","list-group-item");
     newItem.appendChild(newText);
     let list_group = document.getElementsByClassName("list-group")[0];
     list_group.appendChild(newItem)
+}
+
+/* Other events:
+    - dblclick
+    - mousedown
+    - mouseup
+    - mouseenter
+    - mouseleave
+    - 
+*/
+
+let box = document.getElementById("box");
+box.addEventListener("mouseenter",boxEnter);
+box.addEventListener("mouseleave",boxLeave);
+let boxColor = box.style.backgroundColor;
+console.log("Box Color: ",boxColor)
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+function boxEnter(event){
+    console.log(event.type);
+    box.style.backgroundColor = getRandomColor();
+}
+
+function boxLeave(event){
+    console.log(event.type);
+    box.style.backgroundColor = boxColor;
+}
+
+let body = document.body
+body.addEventListener("keydown",keyPress)
+
+function keyPress(event){
+    console.log(String.fromCharCode(event.keyCode))
 }
