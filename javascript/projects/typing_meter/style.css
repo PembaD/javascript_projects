@@ -1,24 +1,75 @@
+/*
+Notes: Float and Display
+    + two main display types - inline and block
+        - display:
+            - block - e.g. div,p
+            - inline - e.g. span,bold
+            - None - no longer visible and does not take space
+            - Inline-block - inline with block-level spacing
+    + float
+        - left,right
+        - inherit - take float property of parent element
+
+Flexbox: layout feature alternative( and more advanced) than display & float
+    + display: flex;
+    + flex-direction: row/column/row-reverse/column-reverse;
+    + flex-wrap: wrap/no-wrap;
+    + alignment:
+        * justify-content: flex-start/flex-end/center;
+    + flex-order
+    + flex-grow-shrink-basis
+
+
+*/
+
 *{
-    box-sizing: border-box;
+    box-sizing: border-box; /*box size includes margin and padding*/
 }
+
 body{
-    background-image: linear-gradient(120deg,#edf5ee,#c6c8f1);
-    color: white;
-    font-family: "Poppins",sans-serif;
-    font-weight: 900;
-    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
 }
+
 nav{
     background-color: #c4c4c4;
-    margin: 0px 0px 0px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid rgb(10, 179, 66); */
+}
+
+header, ul, .nav-options {
+    /* border: 1px solid rgb(10, 179, 66); for testing */
+    color: black;
+    font-family: 'Glegoo',sans-serif;
+    margin: 0% 5%;
+    padding: 1px;
 }
 
 header{
-    border: 0px solid rgb(110, 182, 134);
-    border-radius: 1px;
-    padding: 10px;
-    margin: 20px 10px 10px 10px;
+    font-size: 40pt;
+    text-align: center;
 }
+
+ul{
+    list-style-type: none; /*remove default list styles*/
+    padding: 2%;
+
+    /* content alginment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+}
+.nav-options {
+    text-decoration: none;
+    font-size: 20pt;
+    margin: 2px 30px;
+}
+
+
 div.content{
     border: 0px solid rgb(108, 187, 101);
     /* border-radius: 5px; */
@@ -26,14 +77,7 @@ div.content{
     margin: 20px 10px 10px 10px;
     /* background-color: #6796df; */
 }
-
-header{
-    font-size: xx-large;
-    font-weight: bolder;
-    text-align: left;
-    color: black;
-    color: blueviolet;
-}   
+ 
 
 div.container{
     height: 500px;
