@@ -30,7 +30,7 @@ html, body{
     background-color: rgb(255, 255, 255);
     margin: 0px;
     height: 100%;
-    border: 1px solid rgb(10, 179, 66);
+    /* border: 1px solid rgb(10, 179, 66); */
 }
 
 nav{
@@ -97,7 +97,7 @@ ul{
     /* border: 1px solid rgb(108, 187, 101); */
     margin: 2% 3%;
     justify-content: space-between;
-    /* width: 100%; */
+    min-height: 50%;
 }
 
 .text-box{
@@ -109,6 +109,7 @@ ul{
     font-family: 'Glegoo',sans-serif;
     font-size: 15pt;
     width: 70%;
+    min-height: 100%;
 }
 
 .stats{
@@ -134,17 +135,18 @@ ul{
 .stats-value{
     color: yellow;
     font-size: 25pt;
-    /* border: 1px solid rgb(108, 187, 101); */
-    /* padding: 1px; */
+    font-weight: bold;
     margin: 0px;
     padding-top: 0px;
     text-align: center;
 }
 
 footer{
-    /* background-color: #c4c4c4; */
+    background-color: #c4c4c4;
     min-height: 50px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    
 }
