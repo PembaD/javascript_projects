@@ -26,9 +26,11 @@ Flexbox: layout feature alternative( and more advanced) than display & float
     box-sizing: border-box; /*box size includes margin and padding*/
 }
 
-body{
+html, body{
     background-color: rgb(255, 255, 255);
     margin: 0px;
+    height: 100%;
+    border: 1px solid rgb(10, 179, 66);
 }
 
 nav{
@@ -69,96 +71,80 @@ ul{
     margin: 2px 30px;
 }
 
-
-div.content{
-    border: 0px solid rgb(108, 187, 101);
-    /* border-radius: 5px; */
-    padding: 10px;
-    margin: 20px 10px 10px 10px;
-    /* background-color: #6796df; */
-}
- 
-
-div.container{
-    height: 500px;
-    color:rgb(15, 11, 6);
-    font-size: 20px;
-    font-weight: bold;
+.control-buttons {
+    background-color: white;
+    margin: 2% 3%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* border: 1px solid rgb(10, 179, 66); */
 }
 
-div.footer{
-    border: 0px solid rgb(202, 125, 125);
-    border-radius: 1px;
-    padding: 10px;
-    margin: 10px 10px 10px 10px;
-    text-align: center;
+.button{
+    margin: 1% 5% 0% 0%;
+    background-color: #171718;
+    opacity: 73%;
+    border-radius: 7px;
+    font-family: 'Glegoo',sans-serif;
+    color: white;
+    font-size: 15pt;
+    padding: 5px 20px;
 }
-button{
-    color:coral;
-    font-size: 20px;
-    display: inline-block;
-}
+
 
 .content{
     display: flex;
-    flex-direction: row;
+    /* border: 1px solid rgb(108, 187, 101); */
+    margin: 2% 3%;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+.text-box{
+    border-radius: 7px;
+    padding: 10px 20px;
+    background-color: black;
+    opacity: 70%;
+    color: yellow;
+    font-family: 'Glegoo',sans-serif;
+    font-size: 15pt;
+    width: 70%;
 }
 
 .stats{
-    width: 160px;
-    height: 160px;
-    position: relative;
-    margin-right: 200px;
-    /* background-color: blanchedalmond; */
-}
-.outer{
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    box-shadow: 6px 6px 10px -1px rgba(44, 89, 173, 0.15),
-                -6px -6px 10px -1px rgba(101, 132, 168, 0.7);
-    padding: 20px;
-}
-.inner{
-    height:120px;
-    width: 120px;
-    border-radius: 50%;
+    background-color: #c4c4c4;
+    font-family: 'Glegoo',sans-serif;
+    font-size: 15pt;
+    border-radius: 7px;
+    width: 25%;
+    /* margin: 0% 5% 0% 5%; */
+    /* border: 1px solid red; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 4px 4px 6px -1px rgba(133, 159, 190, 0.7),
-                inset -4px -4px 6px -1px rgba(133, 159, 190, 0.7),
-                -0.5px -0.5px 0px rgba(166, 178, 194, 0.7),
-                0px 12px 10px -10px rgba(160, 170, 197, 0.7);
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.stats-name{
+    padding-left: 10%;
+    /* border: 1px solid rgb(108, 187, 101); */
+    margin-bottom: 0px;
 
 }
-#number{
-    font-weight: 600px;
-    color: #555;
+
+.stats-value{
+    color: yellow;
+    font-size: 25pt;
+    /* border: 1px solid rgb(108, 187, 101); */
+    /* padding: 1px; */
+    margin: 0px;
+    padding-top: 0px;
+    text-align: center;
 }
-circle{
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
-    /* transform: rotate(-2deg); */
-}
-svg{
-    position: absolute;
-    top:0;
-    left:0;
-}
-.stats-outer{
+
+footer{
+    /* background-color: #c4c4c4; */
+    min-height: 50px;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-.speed{
-    font-size: x-large;
-    font-weight: bolder;
-    text-align: left;
-    color: black;
-    color: blueviolet;
-    margin-right: 20px;
 }

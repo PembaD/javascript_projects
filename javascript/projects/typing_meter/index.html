@@ -20,40 +20,33 @@
             <li><a class="nav-options" href="#">Log In</a></li>
         </ul>
     </nav>
+    <div class="control-buttons">
+        <button class="button start"> Start</button>
+        <button class="button reset">Reset</button>
+        <button class="button choose">Choose</button>
+    </div>
     <div class="content">
-        <div class="row container" id="text-box">
+        <div class="text-box" id="text-box">
             <!-- java script will populate this -->
         </div>
-    </div>
-    <div class="stats-outer">
-        <!-- <div class="speed">SPEED </div> -->
         <div class="stats">
-            <div class="outer">
-                <div class="inner">
-                    <div id="number">
-                        0 WPM
-                    </div>
-                </div>
+            <div class="stats-label">
+                <p class="stats-name">Speed:</p>
+                <p class="stats-value" id="speed-value">0 wpm</p>
             </div>
-    
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                   <linearGradient id="GradientColor">
-                      <stop offset="0%" stop-color="#e91e63" />
-                      <stop offset="100%" stop-color="#673ab7" />
-                   </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-            </svg>
+            <div class="stats-label">
+                <p class="stats-name">Accuracy:</p>
+                <p class="stats-value">50 %</p>
+            </div>
+            <div class="stats-label">
+                <p class="stats-name">Timer:</p>
+                <p class="stats-value">60 s</p>
+            </div>
         </div>
     </div>
-
-    <!-- <div class="footer">
-        <button id="start-button">
-            Start
-        </button>
-    </div> -->
-   
+    <footer>
+        
+    </footer>
     <script src="./app.js"></script>
 </body>
 </html>
