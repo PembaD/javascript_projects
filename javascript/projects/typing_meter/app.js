@@ -4,10 +4,12 @@ let slider = 0;
 let char_count = 0;
 let STARTED = false;
 let start_time = 0;
+let last_key_wrong = false;
 const MAX_WPM = 100;
 const text_color_typed = "#FFFFFF";
 const text_color_untyped = "#501717";
 const text_color_next = "orange";
+const text_color_wrong = "red";
 const start_speed = "0 wpm";
 const start_accuracy = "0 %";
 const start_timer = "00 s";
@@ -20,8 +22,12 @@ document.getElementById("text-box").textContent = startText;
 
 
 //when user clicks the start button
-let button = document.getElementsByClassName("start")[0]
-button.addEventListener("click",startTyper);
+let b1 = document.getElementsByClassName("start")[0]
+b1.addEventListener("click",startTyper);
+
+//when user clicks the reset button
+let b2 = document.getElementsByClassName("reset")[0]
+b2.addEventListener("click",reset)
 
 //get the whole body to register typing
 let body = document.body
@@ -41,10 +47,10 @@ function showStats(){
 
         //accuracy update
         let acc = Math.round((slider/char_count) * 100) 
-        if (acc===NaN){
+        if (isNaN(acc)){
             acc = 0;
         }
-        let accuracy = acc + " " + start_accuracy.split(" ")[1]
+        let accuracy = acc + " " + start_accuracy.split(" ")[1];
 
         //timer update
         let timer = start_timer;
@@ -62,7 +68,10 @@ function keyPress(event){
         char_count +=1;
         if (curr===typed){
             //change color of typed char
-            letters[slider].style.color = text_color_typed; 
+            if (!last_key_wrong){
+                letters[slider].style.color = text_color_typed; 
+            }
+            last_key_wrong = false;
             slider += 1;
             if (slider === text.length){
                 reset()
@@ -70,7 +79,10 @@ function keyPress(event){
             }
             //change color of next char to type
             letters[slider].style.color = text_color_next;
-        }        
+        } else{
+            letters[slider].style.color = text_color_wrong;
+            last_key_wrong = true;
+        }
     }
 }
 
